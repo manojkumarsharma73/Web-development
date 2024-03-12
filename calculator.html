@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<style> 
+   body{
+   	background-color: orangered;
+   	margin: 0;
+   	padding: 0;
+
+   }
+   #calcul{
+   	display: flex;
+   	justify-content: center;
+   		position: relative;
+   	top: 5px;
+   }
+   h1{
+  	display: flex;
+  	justify-content: center;
+  	position: relative;
+  	color: yellowgreen;
+  }
+    input[type = "button"]{
+   width: 100%;
+   padding: 20px 30px;
+   background-color: #a2bbcf;
+   font-size: 25px;
+   font-weight: bold;
+   border-radius: 20px;
+    }
+    input[type = "text"]{
+    	padding: 20px 48px;
+    	font-size: 25px;
+    	font-weight: bold;
+    	border-radius: 15px;
+    	border: 2px solid darkred;
+
+    }
+    input[type = "num"]{
+    	padding: 5px 48px;
+    	  	font-size: 25px;
+    	font-weight: bold;
+    	border-radius: 15px;
+    	border: 2px solid darkred;
+
+    }
+    #submit{
+    	background-color: blueviolet;
+    }
+     @media screen  and (min-width :320px) and (max-width :425px){
+     	 body{
+   	background-color: orangered;
+   	margin: 0;
+   	padding: 0;
+
+   }
+    h1{
+  	display: flex;
+  	justify-content: center;
+  	position: relative;
+  	color: yellowgreen;
+  }
+   #calcul{
+   	display: flex;
+   	justify-content: center;
+   		position: relative;
+   	top: 5px;
+/*   	right: 13px;*/
+   }
+    input[type = "button"]{
+   width: 100%;
+   padding: 10px 20px;
+   background-color: #a2bbcf;
+   font-size: 16px;
+   font-weight: bold;
+   border-radius: 20px;
+    }
+    input[type = "text"]{
+    	padding: 10px 25px;
+    	font-size: 16px;
+    	font-weight: bold;
+    	border-radius: 15px;
+    	border: 2px solid darkred;
+
+    }
+    input[type = "num"]{
+    	padding: 10px 25px;
+    	  	font-size: 16px;
+    	font-weight: bold;
+    	border-radius: 15px;
+    	border: 2px solid darkred;
+
+    }
+    #submit{
+    	background-color: blueviolet;
+    }
+    }
+
+    @media screen and (min-width :768px) and (max-width :1440px){
+    	 body{
+   	background-color: orangered;
+   	margin: 0;
+   	padding: 0;
+
+   }
+    h1{
+  	display: flex;
+  	justify-content: center;
+  	position: relative;
+  	color: yellowgreen;
+  	font-size: 40px;
+  }
+   #calcul{
+   	display: flex;
+   	justify-content: center;
+   		position: relative;
+     top: 5px;
+/*   	right: 13px;*/*/
+   }
+    input[type = "button"]{
+   width: 100%;
+   padding: 15px 30px;
+   background-color: #a2bbcf;
+   font-size: 25px;
+   font-weight: bold;
+   border-radius: 20px;
+    }
+    input[type = "text"]{
+    	padding: 15px 80px;
+    	font-size: 25px;
+    	font-weight: bold;
+    	border-radius: 35px;
+    	border: 2px solid darkred;
+
+    }
+    input[type = "num"]{
+    	padding: 15px 80px;
+    	  	font-size: 25px;
+    	font-weight: bold;
+    	border-radius: 35px;
+    	border: 2px solid darkred;
+
+    }
+    #submit{
+    	background-color: blueviolet;
+    }
+    }
+  
+	</style>
+	<script>
+		 function fun(val){
+		 		document.getElementById("result").value+=val;
+		 }
+		 function fun1(){
+		 	var int1=0;
+		 	var int2=0;
+		 	var int3=0;
+		 	var str2="";
+          var str=document.getElementById("result").value;
+          for(var i=0;i<str.length;i++){
+          	if(str.indexOf('+')==i){
+           int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1+int2;
+           str2=int3.toString();
+           document.getElementById("result").value=str2;
+            fun4();
+          	}
+          	else if(str.indexOf('*')==i){
+           int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1*int2;
+           str2=int3.toString();
+           document.getElementById("result").value=str2;
+           
+          	}
+          	else if(str.indexOf('/')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1/int2;
+           str2=int3.toString();
+           document.getElementById("result").value=str2;
+           
+          	}
+          	else if(str.indexOf('%')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1%int2;
+           str2=int3.toString();
+           document.getElementById("result").value=str2;
+            
+          	}
+          	else if(str.indexOf('-')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1-int2;
+           str2=int3.toString();
+           document.getElementById("result").value=str2;
+            
+          	}
+          	
+          }
+		 }
+		 function fun2(){
+		 	document.getElementById("result").value="";
+		 	document.getElementById("History").value="";
+		 }
+		 function fun3(){
+		 	var str2=document.getElementById("result").value;
+		 	var str3=str2.substring(0,str2.length-1);
+		 	document.getElementById("result").value=str3;
+		 	var int1=0;
+		 	var int2=0;
+		 	var int3=0;
+		 	var str2="";
+          var str=document.getElementById("result").value;
+          for(var i=0;i<str.length;i++){
+          	if(str.indexOf('+')==i){
+           int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1+int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+            fun4();
+          	}
+          	else if(str.indexOf('*')==i){
+           int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1*int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+           
+          	}
+          	else if(str.indexOf('/')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1/int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+           
+          	}
+          	else if(str.indexOf('%')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1%int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+            
+          	}
+          	else if(str.indexOf('-')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1-int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+            
+          	}
+          	
+          }
+		 }
+		 function fun4(){
+
+		 	if((document.getElementById("result").value).charAt((document.getElementById("result").value).length-1)=='+' || (document.getElementById("result").value).charAt((document.getElementById("result").value).length-1)=='*' || (document.getElementById("result").value).charAt((document.getElementById("result").value).length-1)=='/' || (document.getElementById("result").value).charAt((document.getElementById("result").value).length-1)=='-' || (document.getElementById("result").value).charAt((document.getElementById("result").value).length-1)=='%'){
+		 		document.getElementById("History").value=document.getElementById("result").value;
+		 	}
+		 	else{
+		 	var int1=0;
+		 	var int2=0;
+		 	var int3=0;
+		 	var str2="";
+          var str=document.getElementById("result").value;
+          for(var i=0;i<str.length;i++){
+          	if(str.indexOf('+')==i){
+           int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1+int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+            fun4();
+          	}
+          	else if(str.indexOf('*')==i){
+           int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1*int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+           
+          	}
+          	else if(str.indexOf('/')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1/int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+           
+          	}
+          	else if(str.indexOf('%')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1%int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+            
+          	}
+          	else if(str.indexOf('-')==i){
+          		 int1=parseFloat(str.substring(0,i));
+           int2=parseFloat(str.substring(i+1,str.length));
+           int3=int1-int2;
+           str2=int3.toString();
+           document.getElementById("History").value=str2;
+            
+          	}
+          	}
+          }
+
+		 }
+	</script>
+</head>
+<body>
+<table id="calcul">
+	<tbody>
+		<h1> CALCULATOR</h1>
+	<tr class="textareaa">
+		<td colspan="4">  <input type="text" id="result" placeholder="0"></td>
+	</tr>
+	<tr><td colspan="4">  <input type="num" id="History" placeholder="Simultaneous Evaluation" readonly ></td></tr>
+	<tr>
+		<td> <input type="button" value="1" onclick="fun('1');fun4()" > </td>
+		<td> <input type="button" value="2" onclick="fun('2');fun4()"> </td>
+        <td> <input type="button" value="3" onclick="fun('3');fun4()"> </td>
+        <td> <input type="button" value="4" onclick="fun('4');fun4()"> </td>
+	</tr>
+		<tr>
+		<td> <input type="button" value="5" onclick="fun('5');fun4()"> </td>
+        <td> <input type="button" value="6" onclick="fun('6');fun4()"> </td>
+        <td> <input type="button" value="7" onclick="fun('7');fun4()"> </td>
+		<td> <input type="button" value="8" onclick="fun('8');fun4()"> </td>
+	
+	<tr>
+		 <td> <input type="button" value="9" onclick="fun('9');fun4()"> </td>
+		<td> <input type="button" value="0" onclick="fun('0');fun4()"> </td>
+		<td> <input type="button" value="*" onclick="fun('*');fun4()"> </td>
+        <td> <input type="button" value="+" onclick="fun('+');fun4()"> </td>
+	</tr>
+		<tr>
+		<td> <input type="button" value="-" onclick="fun('-');fun4()"> </td>
+		<td> <input type="button" value="%" onclick="fun('%');fun4()"> </td>
+        <td> <input type="button" value="/" onclick="fun('/');fun4()"> </td>
+         <td> <input type="button" value="<-" onclick="fun3();"> </td>
+	</tr>
+	<tr><td colspan="3"> <input id="submit" type="button" value="=" onclick="fun1();"> </td>
+	<td> <input type="button" value="CLR" onclick="fun2()"> </td></tr>
+</tbody>
+</table>
+</body>
+</html>
